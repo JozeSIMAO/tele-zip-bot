@@ -127,7 +127,7 @@ def main():
     # ZIP trigger (case-insensitive)
     app.add_handler(
         MessageHandler(
-            filters.TEXT & filters.Regex("^(zip|/zip)$", re.IGNORECASE),
+            filters.TEXT & filters.Regex("(?i)^(zip|/zip)$", re.IGNORECASE),
             zip_files
         )
     )
