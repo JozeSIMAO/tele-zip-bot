@@ -91,7 +91,7 @@ def main():
     app = ApplicationBuilder().token(token).build()
 
     app.add_handler(CommandHandler("start", start))
-    app.add_handler(MessageHandler(filters.TEXT & filters.Regex("^(?i)(zip|/zip)$"), zip_files))
+    app.add_handler(MessageHandler(filters.TEXT & filters.Regex("(?i)^(zip|/zip)$"), zip_files))
     app.add_handler(MessageHandler(filters.ALL, handle_media))
 
     print("Bot is running...")
